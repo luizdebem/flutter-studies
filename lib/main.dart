@@ -12,8 +12,11 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
       ),
       body: Center(
-        child: Image.asset('assets/bob-esponja.jpg') // assets definidos em pubspec.yaml
-        // child: Image.network('https://avatars0.githubusercontent.com/u/37565843?s=460&u=25228add319047862c1b98724ab4a40bd5c18752&v=4')
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.alternate_email),
+          color: Colors.amber
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
