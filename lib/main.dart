@@ -10,6 +10,12 @@ class NinjaCard extends StatefulWidget {
 class _NinjaCardState extends State<NinjaCard> {
   int ninjaLevel = 0;
 
+  List<String> quotes = [
+    'Be yourself; everyone else is already taken',
+    'I have nothing to declare except my genius',
+    'The truth is rarely pure and never simple'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,6 +86,16 @@ class _NinjaCardState extends State<NinjaCard> {
                         fontSize: 18,
                         letterSpacing: 1))
               ],
+            ),
+            SizedBox(height: 30),
+            Text('QUOTES',
+                style: TextStyle(color: Colors.grey, letterSpacing: 2)),
+            SizedBox(height: 10),
+            Column(
+              children: quotes
+                  .map((quote) => Text('"$quote"',
+                      style: TextStyle(color: Colors.grey, letterSpacing: 2)))
+                  .toList(),
             )
           ],
         ),
