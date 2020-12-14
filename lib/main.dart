@@ -100,8 +100,12 @@ class _NinjaCardState extends State<NinjaCard> {
             SizedBox(height: 10),
             Column(
               children: quotes
-                  .map((quote) => Text('"${quote.text}", ${quote.author}.',
-                      style: TextStyle(color: Colors.grey, letterSpacing: 2)))
+                  .map((quote) => Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text('"${quote.text}", ${quote.author}.',
+                            style: TextStyle(
+                                color: Colors.grey, letterSpacing: 2)),
+                      ))
                   .toList(),
             )
           ],
