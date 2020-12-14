@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() => runApp(MaterialApp(home: NinjaCard()));
 
@@ -10,10 +11,16 @@ class NinjaCard extends StatefulWidget {
 class _NinjaCardState extends State<NinjaCard> {
   int ninjaLevel = 0;
 
-  List<String> quotes = [
-    'Be yourself; everyone else is already taken',
-    'I have nothing to declare except my genius',
-    'The truth is rarely pure and never simple'
+  List<Quote> quotes = [
+    Quote(
+        author: 'Oscar Wilde',
+        text: 'Be yourself; everyone else is already taken'),
+    Quote(
+        author: 'Oscar Wilde',
+        text: 'I have nothing to declare except my genius'),
+    Quote(
+        author: 'Oscar Wilde',
+        text: 'The truth is rarely pure and never simple')
   ];
 
   @override
@@ -88,12 +95,12 @@ class _NinjaCardState extends State<NinjaCard> {
               ],
             ),
             SizedBox(height: 30),
-            Text('QUOTES',
+            Text('FAVORITE QUOTES',
                 style: TextStyle(color: Colors.grey, letterSpacing: 2)),
             SizedBox(height: 10),
             Column(
               children: quotes
-                  .map((quote) => Text('"$quote"',
+                  .map((quote) => Text('"${quote.text}", ${quote.author}.',
                       style: TextStyle(color: Colors.grey, letterSpacing: 2)))
                   .toList(),
             )
