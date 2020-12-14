@@ -11,22 +11,30 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Row(
         children: [
-          Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.cyan,
-              child: Text('one')),
-          Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.pinkAccent,
-              child: Text('two')),
-          Container(
-              padding: EdgeInsets.all(40),
-              color: Colors.amber,
-              child: Text('three'))
+          // Expanded(child: Image.asset('assets/bob-esponja.jpg'), flex: 1),
+          Expanded(
+            flex: 2,
+            child: Container(
+                padding: EdgeInsets.all(30),
+                color: Colors.cyan,
+                child: Text('2/4')),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+                padding: EdgeInsets.all(30),
+                color: Colors.pinkAccent,
+                child: Text('1/4')),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+                padding: EdgeInsets.all(30),
+                color: Colors.amber,
+                child: Text('1/4')),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
