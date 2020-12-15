@@ -63,66 +63,68 @@ class _NinjaCardState extends State<NinjaCard> {
         },
       ),
       backgroundColor: Colors.grey[900],
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://raw.githubusercontent.com/iamshaunjp/flutter-beginners-tutorial/lesson-15/ninja_id/assets/thumb.jpg'),
-                radius: 40,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(30, 40, 30, 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://raw.githubusercontent.com/iamshaunjp/flutter-beginners-tutorial/lesson-15/ninja_id/assets/thumb.jpg'),
+                  radius: 40,
+                ),
               ),
-            ),
-            Divider(
-              height: 90,
-              color: Colors.grey[800],
-            ),
-            Text('NAME',
-                style: TextStyle(color: Colors.grey, letterSpacing: 2)),
-            SizedBox(height: 10),
-            Text('Chun Li',
-                style: TextStyle(
-                    color: Colors.amberAccent[200],
-                    letterSpacing: 2,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold)),
-            SizedBox(height: 30),
-            Text('CURRENT NINJA LEVEL',
-                style: TextStyle(color: Colors.grey, letterSpacing: 2)),
-            SizedBox(height: 10),
-            Text('$ninjaLevel',
-                style: TextStyle(
-                    color: Colors.amberAccent[200],
-                    letterSpacing: 2,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold)),
-            SizedBox(height: 30),
-            Row(
-              children: [
-                Icon(
-                  Icons.email,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text('chunli@dev.com',
-                    style: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 18,
-                        letterSpacing: 1))
-              ],
-            ),
-            SizedBox(height: 30),
-            Text('FAVORITE QUOTES',
-                style: TextStyle(color: Colors.grey, letterSpacing: 2)),
-            SizedBox(height: 10),
-            Column(
-              children: quotes.map((quote) => quoteTemplate(quote)).toList(),
-            )
-          ],
+              Divider(
+                height: 90,
+                color: Colors.grey[800],
+              ),
+              Text('NAME',
+                  style: TextStyle(color: Colors.grey, letterSpacing: 2)),
+              SizedBox(height: 10),
+              Text('Chun Li',
+                  style: TextStyle(
+                      color: Colors.amberAccent[200],
+                      letterSpacing: 2,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold)),
+              SizedBox(height: 30),
+              Text('CURRENT NINJA LEVEL',
+                  style: TextStyle(color: Colors.grey, letterSpacing: 2)),
+              SizedBox(height: 10),
+              Text('$ninjaLevel',
+                  style: TextStyle(
+                      color: Colors.amberAccent[200],
+                      letterSpacing: 2,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold)),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  Icon(
+                    Icons.email,
+                    color: Colors.grey[400],
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('chunli@dev.com',
+                      style: TextStyle(
+                          color: Colors.grey[400],
+                          fontSize: 18,
+                          letterSpacing: 1))
+                ],
+              ),
+              SizedBox(height: 30),
+              Text('FAVORITE QUOTES',
+                  style: TextStyle(color: Colors.grey, letterSpacing: 2)),
+              SizedBox(height: 10),
+              Column(
+                children: quotes.map((quote) => quoteTemplate(quote)).toList(),
+              )
+            ],
+          ),
         ),
       ),
     );
