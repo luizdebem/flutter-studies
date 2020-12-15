@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() => runApp(MaterialApp(home: NinjaCard()));
 
@@ -22,27 +23,6 @@ class _NinjaCardState extends State<NinjaCard> {
         author: 'Oscar Wilde',
         text: 'The truth is rarely pure and never simple')
   ];
-
-  Widget quoteTemplate(Quote quote) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(quote.text,
-                style: TextStyle(fontSize: 18, color: Colors.grey[600])),
-            SizedBox(height: 6),
-            Text(
-              quote.author,
-              style: TextStyle(fontSize: 14, color: Colors.grey[800]),
-            )
-          ],
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +101,9 @@ class _NinjaCardState extends State<NinjaCard> {
                   style: TextStyle(color: Colors.grey, letterSpacing: 2)),
               SizedBox(height: 10),
               Column(
-                children: quotes.map((quote) => quoteTemplate(quote)).toList(),
+                children: quotes
+                    .map((quote) => QuoteCard(quote: quote))
+                    .toList(), // (o toList() é por que o children da Column é sempre uma lita de widgets.)
               )
             ],
           ),
