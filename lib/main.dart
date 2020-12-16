@@ -102,7 +102,14 @@ class _NinjaCardState extends State<NinjaCard> {
               SizedBox(height: 10),
               Column(
                 children: quotes
-                    .map((quote) => QuoteCard(quote: quote))
+                    .map((quote) => QuoteCard(
+                      quote: quote,
+                      delete: () {
+                        setState(() {
+                          quotes.remove(quote);
+                        });
+                      }
+                    ))
                     .toList(), // (o toList() é por que o children da Column é sempre uma lita de widgets.)
               )
             ],
