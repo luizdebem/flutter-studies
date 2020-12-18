@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'quote.dart';
-import 'quote_card.dart';
+import 'components/Quote/quote.dart';
+import 'components/Quote/quote_card.dart';
+import 'components/Sidebar/sidebar.dart';
 
 void main() => runApp(MaterialApp(home: NinjaCard()));
 
@@ -33,6 +34,7 @@ class _NinjaCardState extends State<NinjaCard> {
         backgroundColor: Colors.grey[850],
         elevation: 0,
       ),
+      drawer: Sidebar(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         backgroundColor: Colors.grey[800],
@@ -103,13 +105,12 @@ class _NinjaCardState extends State<NinjaCard> {
               Column(
                 children: quotes
                     .map((quote) => QuoteCard(
-                      quote: quote,
-                      delete: () {
-                        setState(() {
-                          quotes.remove(quote);
-                        });
-                      }
-                    ))
+                        quote: quote,
+                        delete: () {
+                          setState(() {
+                            quotes.remove(quote);
+                          });
+                        }))
                     .toList(), // (o toList() é por que o children da Column é sempre uma lita de widgets.)
               )
             ],
