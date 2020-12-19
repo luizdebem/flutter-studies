@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../main.dart';
-import '../../pages/timezone.dart';
 
 class Sidebar extends StatelessWidget {
   @override
@@ -20,10 +18,7 @@ class Sidebar extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NinjaCard()),
-              );
+              Navigator.pushNamed(context, '/');
             },
             child: Text(
               'Home',
@@ -32,10 +27,7 @@ class Sidebar extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Timezone()),
-              );
+              Navigator.pushNamed(context, '/timezone');
             },
             child: Text(
               'Timezone App',
