@@ -10,6 +10,7 @@ class _TimezoneState extends State<Timezone> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey[900],
         appBar: AppBar(
           title: Text('World Time App'),
           centerTitle: true,
@@ -17,7 +18,16 @@ class _TimezoneState extends State<Timezone> {
           elevation: 0,
         ),
         drawer: Sidebar(),
-        body: Text('Home of Wold Time App')
-        );
+        body: Column(
+          children: [
+            FlatButton.icon(
+              onPressed: () {
+                Navigator.pushNamed(context, '/location');
+              },
+              icon: Icon(Icons.edit_location, color: Colors.amberAccent[200],),
+              label: Text('Edit Location', style: TextStyle(color: Colors.amberAccent[200])),
+            )
+          ],
+        ));
   }
 }
