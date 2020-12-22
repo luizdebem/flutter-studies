@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:myapp_flutter/pages/timezone/choose_location.dart';
 import 'package:myapp_flutter/pages/timezone/timezone.dart';
 import 'components/Quote/quote.dart';
 import 'components/Quote/quote_card.dart';
 import 'components/Sidebar/sidebar.dart';
 
-void main() => runApp(MaterialApp(initialRoute: '/', routes: {
-      '/': (context) => NinjaCard(),
-      '/timezone': (context) => Timezone(),
-      '/location': (context) => ChooseLocation()
-    }));
+Future main() async {
+  await DotEnv().load('.env');
+  
+  runApp(MaterialApp(initialRoute: '/', routes: {
+    '/': (context) => NinjaCard(),
+    '/timezone': (context) => Timezone(),
+    '/location': (context) => ChooseLocation()
+  }));
+}
 
 class NinjaCard extends StatefulWidget {
   @override
