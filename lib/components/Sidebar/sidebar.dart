@@ -30,7 +30,7 @@ class Sidebar extends StatelessWidget {
               Navigator.pushNamed(context, '/timezone');
             },
             child: Text(
-              'Timezone App',
+              'Weather App',
               style: TextStyle(fontSize: 20),
             ),
           ),

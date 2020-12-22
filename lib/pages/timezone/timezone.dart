@@ -12,7 +12,7 @@ class _TimezoneState extends State<Timezone> {
     return Scaffold(
         backgroundColor: Colors.grey[900],
         appBar: AppBar(
-          title: Text('World Time App'),
+          title: Text('Weather App'),
           centerTitle: true,
           backgroundColor: Colors.grey[850],
           elevation: 0,

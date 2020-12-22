@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart';
 import 'dart:convert'; // jsonDecode();
 
@@ -8,18 +9,12 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-
-  void getData() async {
-    Response res = await get('https://jsonplaceholder.typicode.com/todos/1');
-    Map data = jsonDecode(res.body);
-    print(data['userId']);
-  }
+  void getCities() async {}
 
   @override
   void initState() {
     super.initState();
-    print('initState() triggered');
-    getData();
+    getCities();
   }
 
   @override
